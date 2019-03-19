@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojoquery</title>
+</head>
+
+<body>
+    <button id="me">Click Me!</button>
+    <p id="hover">Hover Me!</p>
+</body>
+<script>
+
+    const $Dojo = (id) => {
+        return (($) => {
+            $.myId = document.getElementById(id);
+            $.click = (callback) => {
+                $.myId.addEventListener("click", callback);
+            };
+            $.hover = (hoverin, hoverout) => {
+                $.myId.addEventListener("mouseover", hoverin);
+                $.myId.addEventListener("mouseout", hoverout);
+            };
+            console.log($)
+            return $;
+        })({});
+    };
+    // const $Dojo = function (id) {
+    //     return (function ($) {
+    //         $.myID = document.getElementById(id);
+    //         $.click = function (callback) {
+    //             this.myID.addEventListener("click", callback);
+    //         };
+    //         $.hover = function (hoverin, hoverout) {
+    //             this.myID.addEventListener('mouseover', hoverin);
+    //             this.myID.addEventListener('mouseout', hoverout)
+    //         };
+    //         console.log($)
+    //         return $;
+    //     })({});
+    // };
+    $Dojo('me').click(function () {
+        console.log('Click me again!');
+    })
+    $Dojo('hover').hover(function () {
+        document.getElementById('hover').style.color = 'red';
+    }, function () {
+        document.getElementById('hover').style.color = 'black';
+    });
+</script>
+
+</html>
