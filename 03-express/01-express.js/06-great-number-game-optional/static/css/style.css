@@ -1,0 +1,17 @@
+.repeatFrm {
+    width: 240px;
+    height: 200px;
+    border: 3px solid black;
+}
+#outerDiv {
+    margin: 0px auto;
+}
+#outerDiv .repeatFrm {
+    margin: 10px auto;
+}
+.hidden{
+    display: none;
+}
+.wrong-answer-mgs {
+    margin-top: 4.5rem!important;
+}
