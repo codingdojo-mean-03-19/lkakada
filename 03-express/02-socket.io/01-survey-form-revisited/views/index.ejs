@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Revisited Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="mr-md-3 pt-3 px-3 pt-md-1 px-md-1 text-center">
+            <div class="my-3 py-3">
+                <div class="row">
+                    <div class="col-sm-6 offset-sm-3 my-4 text-left">
+                        <div id="message"></div>
+                        <div id="number"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 offset-md-3 text-dark text-left">
+                        <h4 class="text-left">Dojo Survey Form</h4>
+                        <p class="text-left">Please fill up the required fields to complete survey</p>
+                        <form action="" id="survey_form">
+                            <div class="form-group form-row">
+                                <label for="name" class="col-sm-4 col-form-label">Your Name:</label>
+                                <input type="text" class="form-control col-sm-8" id="name" placeholder="Enter name">
+                            </div>
+                            <div class="form-group form-row">
+                                <label for="location" class="col-sm-4 col-form-label">Dojo Location:</label>
+                                <select id="location" class="form-control col-sm-8">
+                                    <option value="seattle">Seattle</option>
+                                    <option value="san jose">San Jose</option>
+                                    <option value="dallas">Dallas</option>
+                                    <option value="boise">Boise</option>
+                                    <option value="berkeley">Berkeley</option>
+                                    <option value="chicago">Chicago</option>
+                                    <option value="tulsa">Tulsa</option>
+                                    <option value="silicon valey">Silicon Valey</option>
+                                    <option value="los angeles">Los Angeles</option>
+                                    <option value="orange county">Orange County</option>
+                                    <option value="tysons corner">Tysons Corner</option>
+                                </select>
+                            </div>
+                            <div class="form-group form-row">
+                                <label for="language" class="col-sm-4 col-form-label">Favorite Language:</label>
+                                <select id="language" class="form-control col-sm-8">
+                                    <option value="python">Python</option>
+                                    <option value="mean">MEAN</option>
+                                    <option value="java">Java</option>
+                                    <option value="net">.Net/C#</option>
+                                    <option value="ruby">Ruby on Rails</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label for="comment" class="col-sm-12">Comments(Optional)</label>
+                                <textarea class="form-control col-sm-12" id="comment" rows=5></textarea>
+                            </div>
+                            <button class="btn btn-info mt-4 float-right" type="submit">Submit Survey</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="http://localhost:5000/js/main.js"></script>
+
+</html>
