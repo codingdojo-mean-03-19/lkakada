@@ -1,0 +1,51 @@
+h2 {
+  margin-top: 20px;
+}
+.enter-name {
+  margin-bottom: 1rem;
+}
+.chat-window {
+  height: 500px;
+  border: 1px solid #cccccc;
+  margin-bottom: 10px;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+
+.input-group-addon{
+  background-color: rgb(2, 117, 216);
+  color: #efefef;
+}
+
+#messages {
+  padding: none;
+}
+
+.msg {
+  margin-bottom: 1rem;
+}
+
+.member-name, .new-member {
+  font-weight: bolder;
+}
+
+#messages
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    background-color: #00000008;
+    padding: 10px;
+}
+
+.card-body
+{
+    overflow-y: scroll;
+    height: 500px;
+}
