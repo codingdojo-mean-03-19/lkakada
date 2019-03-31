@@ -45,7 +45,7 @@ app.post('/reset', (req, res) => {
 });
 
 const checkNum = (random, num) => {
-    if (random > 100 || random < 0) {
+    if (num > 100 || num < 0) {
         return ["Out of range", "", "hidden"];
     }
     else if (random > num) {
