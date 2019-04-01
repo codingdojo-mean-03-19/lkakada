@@ -1,5 +1,5 @@
 1. Create a database called 'my_first_db'.
-user my_first_db
+use my_first_db
 
 2. Create students collection.
 db.createCollection('students')

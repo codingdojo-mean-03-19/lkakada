@@ -8,8 +8,6 @@ const app = express();
 
 //Integrate body-parser with app
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
 //setting static folder directory
 app.use(express.static(path.join(__dirname, './static')));
 //setting our views folder directory
