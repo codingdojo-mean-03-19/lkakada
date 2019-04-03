@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Message Board</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>The Dojo Message Board</h1>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <% if(messages.success){ %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <%= messages.success %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <%};%>
+                <% if(messages.errors) {%>
+                <% for(error of messages.errors) { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <%= error %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <%};%>
+                <%};%>
+                <form action="/message" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control col-sm-4" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" name="message" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">Post message</button>
+                </form>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-sm-10 offset-sm-1">
+                <% results.forEach(function(result) {%>
+                <h4>Name: <%= result.name %></h4>
+                <h5>Message: <%= result.message %></h5>
+                <div class="ml-4 my-3">
+                    <% result.comments.forEach(function(comment) {%>
+
+                    <h6>Name: <%= comment.name %></h6>
+                    <p>Comment: <%= comment.comment %></p>
+                    <% }) %>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                            <form action="/comment/<%= result._id %>" method="POST">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control col-sm-4" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Comment:</label>
+                                    <textarea class="form-control" name="comment" rows="2"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary float-right">Post Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
