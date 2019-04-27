@@ -1,0 +1,19 @@
+<!-- The content below is only a placeholder and can be replaced. -->
+<div>
+  <h1>Restful Tasks API</h1>
+  <button (click)="getTasksFromService()" id="btn-task">Get All Tasks</button>
+  <table *ngIf="tasks.length > 0">
+    <tr>
+      <th>Task</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let task of tasks">
+      <td>{{task.title}}</td>
+      <td><button id="btn-show" (click)="getTaskDetail(task._id)">Show</button></td>
+    </tr>
+  </table>
+  <div>
+    <h5>{{task.title}}</h5>
+    <p>{{task.description}}</p>
+  </div>
+</div>
