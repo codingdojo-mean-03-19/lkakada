@@ -1,0 +1,31 @@
+#btn-task {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    font-size: 20px;
+}
+
+#btn-show {
+    padding: 5px 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: lightskyblue;
+    color: white;
+}
+.container {
+    margin-left: 500px;
+}
+
+table {
+    border: 1px solid salmon;
+    margin-top: 20px;
+    padding: 20px;
+    width: 300px;
+}
+#detail {
+    border: 1px solid slateblue;
+    margin-top: 20px;
+    width: 300px;
+}
