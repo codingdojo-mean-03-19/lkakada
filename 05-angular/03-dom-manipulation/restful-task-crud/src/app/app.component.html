@@ -1,0 +1,58 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <form (submit)="onSubmit()" *ngIf="editStatus == false">
+        <h2 class="text-center">New Task</h2>
+        <p>{{newTask | json}}</p>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" name="newTask.title" [(ngModel)]="newTask.title"
+            placeholder="Enter title">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" name="newTask.description" [(ngModel)]="newTask.description"
+            placeholder="Enter description">
+        </div>
+        <button type="submit" class="btn btn-primary float-right">CREATE</button>
+      </form>
+      <!-- Edit task -->
+      <form (submit)="onUpdate()" *ngIf="editStatus == true">
+        <h2 class="text-center">Edit Task</h2>
+        <p>{{editTask | json}}</p>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" name="editTask.title" [(ngModel)]="editTask.title"
+            placeholder="Enter title">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" name="editTask.description" [(ngModel)]="editTask.description"
+            placeholder="Enter description">
+        </div>
+        <button type="submit" class="btn btn-primary float-right">UPDATE</button>
+      </form>
+
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <h2 class="text-center">Display Tasks</h2>
+      <table class="table table-hover table-secondary" *ngIf="tasks.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">Tasks</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks">
+            <td>{{task.title}}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="onDelete(task._id)">Delete</button>
+              <button class="btn btn-info btn-sm" (click)="onEdit(task)">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
