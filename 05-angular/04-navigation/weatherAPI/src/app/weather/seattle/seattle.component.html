@@ -1,0 +1,15 @@
+<div style="width: 500px; margin: 10px auto;" *ngIf="city">
+  <div class="card" style="width: 20rem;">
+    <img
+      src="https://images.pexels.com/photos/944636/pexels-photo-944636.jpeg?cs=srgb&dl=architecture-buildings-city-944636.jpg&fm=jpg"
+      class="card-img-top" alt="...">
+    <h3 class="text-center">{{city.name}}</h3>
+    <p class="pl-3">
+      Humidity: {{city.main.humidity}}
+      <br> Temperature (Average): {{city.main.temp}}
+      <br> Temperature (High): {{city.main.temp_max}}
+      <br> Temperature (Low): {{city.main.temp_min }}
+      <br> Status: {{city.weather[0].description}}
+    </p>
+  </div>
+</div>
