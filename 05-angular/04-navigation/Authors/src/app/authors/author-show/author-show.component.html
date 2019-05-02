@@ -1,0 +1,8 @@
+<div class="row" *ngIf="author">
+  <div class="col-xs-12 col-sm-6 offset-sm-3 my-4">
+    <button class="btn btn-info my-4" [routerLink]="['/']">back home</button>
+    <h4>Selected Author</h4>
+    <p>ID: <b class="text-primary">{{ author._id }}</b></p>
+    <p>Full Name: <b class="text-primary">{{ author.name }}</b></p>
+  </div>
+</div>

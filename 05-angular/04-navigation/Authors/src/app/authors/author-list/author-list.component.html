@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row col-xs-12 col-sm-10 offset-sm-1 my-4 custyle">
+    <button class="btn btn-info my-3" [routerLink]="['author/new']">Add an
+      author</button>
+    <table class="table table-striped custab">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tr *ngFor='let author of authors' (click)='onSelect(author)' [routerLink]="['author', author._id]">
+        <td id="selecedAuthor">{{author.name}}</td>
+        <td class="text-center">
+          <button class='btn btn-info btn-xs text-white' [routerLink]="['author/edit', author._id]">
+            <span class="glyphicon glyphicon-edit"></span>Edit
+          </button>
+          <button class="btn btn-danger btn-xs text-white" (click)='onDelete($event, author)'>
+            <span class="glyphicon glyphicon-remove"></span>Del
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-xs-12 col-sm-8 offset-sm-2 my-4">
+      <button class="btn btn-info my-3" [routerLink]="['/']">Home</button>
+      <form (submit)='onSubmit($event,authorForm)' #authorForm="ngForm">
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" class="form-control" name="name" placeholder="Enter full name" [(ngModel)]='author.name'
+            required>
+        </div>
+        <button type="submit" class="btn btn-info float-right" [disabled]='authorForm.invalid'>Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
