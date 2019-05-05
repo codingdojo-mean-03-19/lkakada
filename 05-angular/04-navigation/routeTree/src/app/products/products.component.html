@@ -1,0 +1,10 @@
+<div class="border border-primary p-4">
+  <h4>The product component has a blue border.</h4>
+  <h4>
+    It's here because /products uses the router outlet in the root component
+  </h4>
+  <button class="btn btn-info mx-3" [routerLink]="['details', 5]">Go to /products/details/5</button>
+  <button class="btn btn-info mx-3" [routerLink]="['category', 5]">Go to /products/category/5</button>
+  <button class="btn btn-info" [routerLink]="['brand', 5]">Go to /products/brand/5</button>
+  <router-outlet></router-outlet>
+</div>
