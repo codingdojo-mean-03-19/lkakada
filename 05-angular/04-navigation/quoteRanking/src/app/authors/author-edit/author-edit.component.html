@@ -1,0 +1,24 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 offset-sm-2">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errors.length">
+        <strong *ngFor="let error of errors">{{error}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <h1 class="text-primary">Quote Ranks</h1>
+      <h5 class="float-right"><a [routerLink]="['']">Home</a></h5>
+      <p>Update a existing quotable author: </p>
+      <form (submit)="onUpdate($event, authorForm)" #authorForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Enter Name" [(ngModel)]="author.name"
+            required>
+        </div>
+        <button type="button" class="btn btn-warning mx-2" [routerLink]="['/']">Cancel</button>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </div>
+</div>

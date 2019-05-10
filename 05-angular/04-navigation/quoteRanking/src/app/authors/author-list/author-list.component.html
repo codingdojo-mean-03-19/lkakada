@@ -1,0 +1,26 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 offset-sm-2">
+      <h1 class="text-primary">Quote Ranks</h1>
+      <h5 class="float-right"><a [routerLink]="['new']">Add a quotable author</a></h5>
+      <p>We have quotes by: </p>
+      <table class="table table-striped">
+        <thead>
+          <tr class="text-center">
+            <th scope="col">Full Name</th>
+            <th scope="col">Actives Avaliable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let author of authors" class="text-center">
+            <td>{{author.name}}</td>
+            <td id="author">
+              <button class="btn btn-primary btn-sm mx-2" [routerLink]="['quotes', author._id]">View quotes</button>
+              <button class="btn btn-info btn-sm" [routerLink]="['edit', author._id]">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
