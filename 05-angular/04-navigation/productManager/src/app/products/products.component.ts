@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router'
+import { Product } from '../models';
 
 @Component({
   selector: 'app-products',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class ProductsComponent implements OnInit {
 
-  products: any;
+  products: Product[] = [];
   constructor(
     private productsService: ProductsService,
     private router: Router,

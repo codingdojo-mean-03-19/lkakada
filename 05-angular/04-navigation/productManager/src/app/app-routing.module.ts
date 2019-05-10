@@ -7,11 +7,8 @@ import { ProductAddComponent } from './product-add/product-add.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  {
-    path: 'products', component: ProductsComponent, children: [
-      { path: 'edit/:product_id', component: ProductEditComponent }
-    ]
-  },
+  { path: 'products', component: ProductsComponent },
+  { path: 'products/edit/:product_id', component: ProductEditComponent },
   { path: 'products/new', component: ProductAddComponent },
   { path: '**', redirectTo: '' }
 ];

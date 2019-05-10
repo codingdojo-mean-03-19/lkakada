@@ -3,6 +3,7 @@ import { ProductsService } from '../services/products.service'
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router'
 import { map, switchMap } from 'rxjs/operators';
+import { Product } from '../models';
 
 
 
@@ -13,9 +14,7 @@ import { map, switchMap } from 'rxjs/operators';
 
 })
 export class ProductEditComponent implements OnInit {
-  errors: string[] = [];
-  @Input()
-  product: any
+  product: Product;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +23,7 @@ export class ProductEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.product = { title: '', price: 0, image: '' }
+    this.product = { _id: '', title: '', price: 0, imageUrl: '' }
 
     this.route.paramMap
       .pipe(
@@ -47,8 +46,4 @@ export class ProductEditComponent implements OnInit {
           console.log(error.error);
         })
   }
-  private handleErrors(errors: string[] | string) {
-    this.errors = Array.isArray(errors) ? errors : [errors];
-  }
-
 }

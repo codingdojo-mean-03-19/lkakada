@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../models';
+
 
 @Component({
   selector: 'app-product-add',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-add.component.css']
 })
 export class ProductAddComponent implements OnInit {
-  product: any;
+  product = new Product();
   errors: string[] = [];
   constructor(
     private route: ActivatedRoute,
@@ -19,7 +20,6 @@ export class ProductAddComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.product = { title: '', price: 0, image: '' };
   }
   onSubmit(event: Event) {
     event.preventDefault();
@@ -34,9 +34,7 @@ export class ProductAddComponent implements OnInit {
         })
   }
   cancelCreate() {
-    this.product = { title: '', price: 0, image: '' };
     this.router.navigateByUrl('/products');
-
   }
   private handleErrors(errors: string[] | string) {
     this.errors = Array.isArray(errors) ? errors : [errors];
