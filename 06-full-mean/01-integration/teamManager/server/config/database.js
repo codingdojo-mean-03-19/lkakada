@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 const modelsPath = path.join(__dirname, '../models');
-mongoose.connect('mongodb://localhost/teamManager', { useCreateIndex: true, useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/teamManager',{ useMongoClient: true });
 
 mongoose.connection.once('connected', () => console.log('Connected to MongoDB'));
 fs.readdirSync(modelsPath)
