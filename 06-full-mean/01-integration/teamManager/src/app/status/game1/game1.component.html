@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 offset-sm-1 ml-4">
+    <h3>Player status - Game 1</h3>
+    <nav class="nav justify-content-center">
+      <h5><a class="nav-link" [routerLink]="['/status/game/1']">Game 1</a></h5>
+      <h3 class="text-secondary">|</h3>
+      <h5><a class="nav-link" [routerLink]="['/status/game/2']">Game 2</a></h5>
+      <h3 class="text-secondary">|</h3>
+      <h5><a class="nav-link" [routerLink]="['/status/game/3']">Game 3</a></h5>
+    </nav>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Team Name</th>
+            <th scope="col">Actives</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let team of teams">
+            <td>{{team.name | titlecase}}</td>
+            <td id="gameBtn">
+              <button class="btn-sm" (click)="playing(team)"
+                [ngClass]="team.game1=='playing' ? 'btn btn-success' : 'btn btn-light'">Playing</button>
+              <button class="btn-sm" (click)="notPlaying(team)"
+                [ngClass]="team.game1=='not playing' ? 'btn btn-danger': 'btn btn-light'">Not Playing</button>
+              <button class="btn-sm" (click)="undecided(team)"
+                [ngClass]="team.game1=='undecided' ? 'btn btn-warning':'btn btn-light'">Undecided</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

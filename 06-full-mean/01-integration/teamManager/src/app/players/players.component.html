@@ -1,0 +1,23 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 offset-sm-1">
+      <nav class="nav">
+        <h4><a class="nav-link" [routerLink]="['/']">Manage Player</a></h4>
+        <h2 class="text-secondary">|</h2>
+        <h4><a class="nav-link" [routerLink]="['/status/game/1']">Manage Player Status</a></h4>
+      </nav>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 ml-4">
+          <nav class="nav">
+            <h5><a class="nav-link" [routerLink]="['/']">List</a></h5>
+            <h3 class="text-secondary">|</h3>
+            <h5><a class="nav-link" [routerLink]="['addPlayer']">Add Player</a></h5>
+          </nav>
+          <div class="container">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

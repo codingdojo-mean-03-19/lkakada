@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Team Name</th>
+      <th scope="col">Preferred Position</th>
+      <th scope="col">Actives</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams">
+      <td>{{team.name | titlecase}}</td>
+      <td>{{team.position | titlecase}}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="delete(team)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
