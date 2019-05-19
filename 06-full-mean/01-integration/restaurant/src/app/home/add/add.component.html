@@ -1,0 +1,17 @@
+<p>Add a restaurant </p>
+<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errors.length">
+  <small class="text-danger" *ngFor="let error of errors">{{error.error}}</small>
+</div>
+<form (submit)="onSubmit($event, restaurantForm)" #restaurantForm="ngForm">
+  <div class="form-group">
+    <label for="name">Restaurant Name</label>
+    <input type="text" class="form-control" name="name" placeholder="Enter restaurant name"
+      [(ngModel)]="restaurant.name" required>
+  </div>
+  <div class="form-group">
+    <label for="position">Cuisine</label>
+    <input type="text" class="form-control" name="position" placeholder="Enter cuisine" [(ngModel)]="restaurant.cuisine"
+      required>
+  </div>
+  <button type="submit" [disabled]="restaurantForm.invalid" class="btn btn-success">Add Restaurant</button>
+</form>

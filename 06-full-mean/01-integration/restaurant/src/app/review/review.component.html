@@ -1,0 +1,13 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <h1>Review </h1>
+      <nav class="nav">
+        <h5><a class="nav-link" [routerLink]="['/listing']">Home</a></h5>
+        <h3 class="text-secondary">|</h3>
+        <h5><a class="nav-link" [routerLink]="['/review/adding', restaurant._id]">Add Review</a></h5>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

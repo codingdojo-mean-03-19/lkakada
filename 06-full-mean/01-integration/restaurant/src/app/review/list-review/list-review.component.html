@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Star</th>
+      <th scope="col">Review</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let review of restaurant.reviews">
+      <td>{{review.name | titlecase}}</td>
+      <td>{{review.star }}</td>
+      <td>{{review.content }}</td>
+      <td>
+        <button class="btn btn-danger btn-sm mr-2" (click)="deleteReview(review)">Delete</button>
+        <button class="btn btn-warning btn-sm mr-2" (click)="deleteRestaurant(restaurant)">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

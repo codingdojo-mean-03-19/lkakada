@@ -1,0 +1,19 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Restaurent</th>
+      <th scope="col">Cuisine</th>
+      <th scope="col">Actives</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let restaurant of restaurants">
+      <td>{{restaurant.name | titlecase}}</td>
+      <td>{{restaurant.cuisine | titlecase}}</td>
+      <td>
+        <button class="btn btn-danger btn-sm mr-2" (click)="deleteRestaurant(restaurant)">Delete</button>
+        <button class="btn btn-info btn-sm" [routerLink]="['/review/list', restaurant._id]">Read Review</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
